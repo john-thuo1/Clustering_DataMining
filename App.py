@@ -83,7 +83,7 @@ vectorizer = TfidfVectorizer(stop_words='english')
 pca = PCA(n_components=2)
 
 # K-Means Clustering
-optimal_clusters = 5  # Used Elbow method to get this.
+optimal_clusters = 3  # Used Elbow method to get this.
 kmeans = KMeans(n_clusters=optimal_clusters, init='k-means++', max_iter=300, n_init=10, random_state=0)
 
 
