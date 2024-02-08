@@ -8,7 +8,8 @@ import streamlit as st
 import plotly.graph_objs as go
 from tqdm import tqdm
 
-TF_ENABLE_ONEDD_OPTS = '0'
+os.environ["TF_ENABLE_ONEDNN_OPTS"] = "0"
+
 
 
 
