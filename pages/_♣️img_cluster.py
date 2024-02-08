@@ -140,7 +140,7 @@ def main():
 
     # Streamlit App
     st.title('Image Clustering with Streamlit')
-    st.text("""The dataset consists of different Product Images(Bicycles, Electronics, Pamphlets, Tractors) scraped from iStockPhoto LP.You can find the corresponding scraping files in the notebook.""")
+    st.text("""The dataset consists of different Product Images(Bicycles, Electronics, Tractors) scraped from iStockPhoto LP.You can find the corresponding scraping files in the notebook.""")
 
 
     for cluster in range(optimal_clusters):
