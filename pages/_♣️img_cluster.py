@@ -135,7 +135,7 @@ def main():
     input_dir = './Data/Downloaded_images/'
     vgg16_features, file_info = load_and_extract_features(input_dir)
 
-    optimal_clusters = 4
+    optimal_clusters = 3
     matrix_pca, cluster_labels, centroids = perform_clustering(vgg16_features, n_clusters=optimal_clusters)
 
     # Streamlit App
