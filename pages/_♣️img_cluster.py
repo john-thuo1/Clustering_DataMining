@@ -81,7 +81,7 @@ def perform_clustering(vgg16_features, n_clusters=4):
     return matrix_pca, cluster_labels, centroids
 
 def plot_scatter_and_centroids(matrix_pca, cluster_labels, centroids):
-    cluster_colors = ['yellow', 'green', 'blue', 'purple']
+    cluster_colors = ['yellow', 'green', 'purple']
     scatter_traces = []
     unique_clusters = np.unique(cluster_labels)
 
