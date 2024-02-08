@@ -38,7 +38,7 @@ def cluster_news(df_news, vectorizer, pca, kmeans):
     return df_results_grouped, tfidf_matrix_pca
 
 # Display the cluster Graph
-
+@st.cache_resource()
 def plot_clusters(tfidf_matrix_pca):
     df_plotly = pd.DataFrame({
         'PC1': tfidf_matrix_pca[:, 0],
@@ -46,10 +46,8 @@ def plot_clusters(tfidf_matrix_pca):
         'Cluster': df_news['Cluster'].astype(int).astype(str)  
     })
 
-    # Create scatterplot using Plotly Graph Objects
     fig = go.Figure()
 
-    # Create scatter plot for all clusters in the same plot
     for cluster in sorted(df_news['Cluster'].unique()):
         cluster_data = df_plotly[df_plotly['Cluster'] == str(cluster)]
         fig.add_trace(
@@ -62,7 +60,6 @@ def plot_clusters(tfidf_matrix_pca):
             )
         )
 
-    # Update layout
     fig.update_layout(
         title='Scatterplot of News Articles with Clusters',
         xaxis=dict(title='Principal Component 1'),
@@ -70,6 +67,7 @@ def plot_clusters(tfidf_matrix_pca):
     )
 
     return fig
+
 # Load spacy model
 nlp = load_spacy_model()
 
@@ -116,7 +114,7 @@ st.title("News Clustering ✌️")
 st.text("""The dataset consists of Titles and Links(urls) of various News Articles scraped from Google Search News""")
 
 st.write("**Original News Articles Dataset**")
-st.write(df.head())
+st.dataframe(df.head())
 
 st.write("**Clustered News Articles Dataset**")
 st.text("""Scroll through the dataframe to look at all news with their clusters""")
