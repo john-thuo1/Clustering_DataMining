@@ -1,4 +1,7 @@
-# Link to App
+# Link to Video Recording 
+[Video_recording](https://drive.google.com/file/d/1koDY67P4-Ahkm80fn7zFGYGe77hIrh8l/view?usp=sharing)
+
+If it works, here is the app link :
 [streamlit-app](https://cldtmining.streamlit.app)
 
 # Navigation
